@@ -1,7 +1,8 @@
+"use client";
 import Image from "next/image";
 import profilePic from "../public/layered.png";
 import "@fontsource/kaushan-script";
-import { BiLink } from "react-icons/bi";
+import { BiLink, BiCopy } from "react-icons/bi";
 
 export default function Home() {
   return (
@@ -15,16 +16,31 @@ export default function Home() {
         </h1>
         <div>
           <h3 className="text-lg md:text-xl font-bold tracking-wider">
-            Paste your long url here:{" "}
+            Paste your long url here:
           </h3>
           <div className="flex flex-col md:flex-row w-64 md:w-fit items-center  h-13 rounded-full mt-6 md:shadow-slate-400	 shadow-sm">
             <BiLink className="ml-0 md:ml-6 w-16" color="#b3b3b3" size={32} />
             <input
               className="m-2 md:m-4 w-64 border-none outline-0 shadow-sm shadow-slate-400 md:shadow-none p-4 md:p-0 rounded-full md:rounded-none"
-              placeholder="https://www.youtube.com/"
+              placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
             />
             <button className="btn pt-4 pb-4 pl-16 pr-16 rounded-full bg-orange-400 hover:bg-orange-500  transition-colors duration-300 ease-in-out text-white">
               Shorten
+            </button>
+          </div>
+          <h3 className="text-lg md:text-xl font-bold tracking-wider mt-6">
+            Your Shortened URL:
+          </h3>
+          <div className="flex flex-col md:flex-row w-64 md:w-fit items-center  h-13 rounded-full mt-2 md:shadow-slate-400	 shadow-sm">
+            <BiLink className="ml-0 md:ml-6 w-16" color="#b3b3b3" size={32} />
+            <input
+              disabled
+              className="m-2 text-slate-400 md:m-4 w-64 border-none outline-0 shadow-sm shadow-slate-400 md:shadow-none p-4 md:p-0 rounded-full md:rounded-none"
+              placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            />
+            <button className="link-copy flex items-center justify-center btn pt-4 pb-4 pl-16 pr-16 rounded-full bg-orange-400 hover:bg-orange-500  transition-colors duration-300 ease-in-out text-white">
+              <BiCopy size={18} className="mr-1" />
+              Copy
             </button>
           </div>
         </div>
