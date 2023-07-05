@@ -9,3 +9,17 @@ datasource db {
   provider = "mongodb"
   url      = env("DATABASE_URL")
 }
+
+model generatedUrls {
+  id     String @id @default(auto()) @map("_id") @db.ObjectId
+  original  String
+  generated String
+  urlCode String @unique
+  createdAt DateTime @default(now())
+}
+// For later maybe
+// model UrlAnalytics{
+//   id String @id @default(auto()) @map("_id") @db.ObjectId
+//   urlId String @db.ObjectId
+//   clicked Int
+// }
