@@ -43,7 +43,7 @@ export default async function handler(
 
   const { result, error } = await checkUrl(url);
   if (error) {
-    return res.status(500).json({ error });
+    return res.status(500).json({ message: error });
   }
 
   if (result?.length === 0) {

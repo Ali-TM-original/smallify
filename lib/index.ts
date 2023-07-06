@@ -1,4 +1,4 @@
 import Generator from "./generator";
-import { checkUrl, CreateItem } from "./urlHandlers";
+import { checkUrl, CreateItem, getRedirectUrl } from "./urlHandlers";
 
-export { Generator, checkUrl, CreateItem };
+export { Generator, checkUrl, CreateItem, getRedirectUrl };

@@ -29,3 +29,16 @@ export async function checkUrl(originalUrl: string) {
     return { res: null, error: error.message }; // Return error message when an error occurs
   }
 }
+
+export async function getRedirectUrl(code: string) {
+  try {
+    const result = await prisma.generatedUrls.findUnique({
+      where: {
+        urlCode: code,
+      },
+    });
+    return { result, error: null };
+  } catch (error) {
+    return { res: null, error: error.message };
+  }
+}
